@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+
+    <bean id="userService" class="org.dasa.service.UserService">
+
+        <constructor-arg>
+            <ref bean="userDao"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="userRoleDao"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="beanInjector"/>
+        </constructor-arg>
+    </bean>
+    <bean id="archiveService" class="org.dasa.service.ArchiveService">
+        <constructor-arg>
+            <ref bean="userSessionController"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="archivesGateway"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="repositoryWebservice"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="arrayUtility"/>
+        </constructor-arg>
+    </bean>
+    <bean id="imageService" class="org.dasa.service.ImageService">
+        <constructor-arg>
+            <ref bean="acceptedFilesConfig"/>
+        </constructor-arg>
+        <property name="fileSystemController">
+            <ref bean="fileSystemController"/>
+        </property>
+        <property name="scanImageFactory">
+            <ref bean="scanImageFactory"/>
+        </property>
+
+        <property name="repositoryWebservice">
+            <ref bean="repositoryWebservice"/>
+        </property>
+
+    </bean>
+    <bean id="scanImportService" class="org.dasa.service.ScanImportService">
+
+        <constructor-arg>
+            <ref bean="scanImportScenarioFactory"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="scanStoreController"/>
+        </constructor-arg>
+
+        <constructor-arg>
+            <ref bean="directoryController"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="importDirectoryGateway"/>
+
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="fileSystemController"/>
+
+        </constructor-arg>
+
+    </bean>
+
+
+</beans>

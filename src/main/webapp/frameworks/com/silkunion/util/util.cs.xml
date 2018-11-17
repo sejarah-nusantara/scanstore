@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans>
+    
+    <bean id="objectDebugger" class="com.silkunion.util.Decapsulator" lazy-init="false">
+
+        <constructor-arg name="autoexpand">
+            <value>true</value>
+        </constructor-arg>
+
+    </bean>
+   
+   
+    <bean id="beanInjector" class="com.silkunion.util.beanutil.BeanInjector" lazy-init="false">
+        <constructor-arg><value></value></constructor-arg>
+        <constructor-arg><value>true</value></constructor-arg>
+        
+    </bean>
+    
+    
+    <bean id="dateTime" class="com.silkunion.util.DateTime" lazy-init="false"/>
+   
+</beans>

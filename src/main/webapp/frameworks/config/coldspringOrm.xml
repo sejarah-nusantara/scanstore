@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="no">
+	<!-- APPLICATION CONFIGURATION -->
+
+	<!-- Remote proxies 	-->
+	<import resource="/remote/remote.cs.xml"/>
+	
+	<!-- Security-->
+	<import resource="/org/dasa/security/security.cs.xml"/>
+	
+	<!-- persistence -->
+	<import resource="/org/dasa/persistence/persistenceOrm.cs.xml"/>
+	
+	<!--  Wsconnector -->
+	<import resource="/org/dasa/connector/connector.cs.xml"/>
+	
+	<!-- DOMAIN AOP-->
+	<import resource="/org/dasa/advice/advice.cs.xml"/>
+	<!-- DOMAIN Control-->
+	<import resource="/org/dasa/control/control.cs.xml"/>
+	<!-- DOMAIN SERVICES -->
+	<import resource="/org/dasa/service/service.cs.xml"/>
+	<!-- BUSINESS MODEL -->
+	<import resource="/org/dasa/model/model.cs.xml"/>
+	<!-- UTILITIES -->
+	<import resource="/org/dasa/util/util.cs.xml"/>
+
+</beans>

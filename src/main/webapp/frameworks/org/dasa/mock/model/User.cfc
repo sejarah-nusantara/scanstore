@@ -1,0 +1,1 @@
+<cfcomponent persistent="false" serializable="true" accessors="true" extends="org.dasa.model.user.User" />

@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+    <bean id="errorAdvice" class="com.silkunion.advice.ErrorAdvice">
+        <property name="handlers">
+            <list>
+                <bean class="org.dasa.advice.ErrorHandler">
+                    <constructor-arg>
+                        <ref bean="userSessionController"/>
+                    </constructor-arg>
+                    <constructor-arg>
+                        <ref bean="userService"/>
+                    </constructor-arg>
+						        <constructor-arg>
+						            <ref bean="fileSystemController"/>
+						        </constructor-arg>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="errorAdvisor" class="coldspring.aop.support.NamedMethodPointcutAdvisor">
+        <property name="advice">
+            <ref bean="errorAdvice"/>
+        </property>
+        <property name="mappedNames">
+            <value>*</value>
+        </property>
+    </bean>
+
+    <bean id="jsonSerializeAdvice" class="com.silkunion.advice.JsonSerializeAdvisor">
+        <constructor-arg>
+            <bean class="com.silkunion.util.ObjectTreeConvertor"/>
+        </constructor-arg>
+        <property name="userSessionController">
+            <ref bean="userSessionController"/>
+        </property>
+    </bean>
+
+    <bean id="jsonDeserializeSessionAdvisor"
+        class="coldspring.aop.support.NamedMethodPointcutAdvisor">
+        <property name="advice">
+            <ref bean="jsonDeSerializeSessionAdvice"/>
+        </property>
+        <property name="mappedNames">
+            <value>loginUser</value>
+        </property>
+    </bean>
+
+    <bean id="jsonDeSerializeSessionAdvice" class="org.dasa.advice.JsonDeSerializeSessionAdvisor"/>
+
+    <bean id="jsonDeserializePageScanAdvisor"
+        class="coldspring.aop.support.NamedMethodPointcutAdvisor">
+        <property name="advice">
+            <ref bean="jsonDeSerializePageScanAdvice"/>
+        </property>
+        <property name="mappedNames">
+            <value>updateScan,updateScans,deleteScan</value>
+        </property>
+    </bean>
+
+    <bean id="jsonDeSerializePageScanAdvice" class="org.dasa.advice.JsonDeSerializePageScanAdvisor">
+        <property name="pageScanFactory">
+            <ref bean="pageScanFactory"/>
+        </property>
+    </bean>
+
+    <bean id="jsonDeserializeImportDirectoryAdvisor"
+        class="coldspring.aop.support.NamedMethodPointcutAdvisor">
+        <property name="advice">
+            <ref bean="jsonDeSerializeImportDirectoryAdvice"/>
+        </property>
+        <property name="mappedNames">
+            <value>sendScanImportToRepository</value>
+        </property>
+    </bean>
+
+    <bean id="jsonDeserializeImportDirectoryWithFactoryAdvisor"
+        class="coldspring.aop.support.NamedMethodPointcutAdvisor">
+        <property name="advice">
+            <ref bean="jsonDeSerializeImportDirectoryAdviceWithFactory"/>
+        </property>
+        <property name="mappedNames">
+            <value>deleteImportDirectory</value>
+        </property>
+    </bean>
+
+    <bean id="jsonDeSerializeImportDirectoryAdvice"
+        class="org.dasa.advice.JsonDeSerializeImportDirectoryAdvisor">
+        <constructor-arg>
+            <ref bean="importDirectoryGateway"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="importDirectoryFactory"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="userSessionController"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="fileSystemController"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="jsonDeSerializeImportDirectoryAdviceWithFactory"
+        class="org.dasa.advice.JsonDeSerializeImportDirectoryAdvisor">
+        <constructor-arg>
+            <ref bean="importDirectoryGateway"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="importDirectoryFactory"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="userSessionController"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="fileSystemController"/>
+        </constructor-arg>
+        <constructor-arg>
+            <value>factory</value>
+        </constructor-arg>
+    </bean>
+
+    <bean id="jsonSerializeAdvisor" class="coldspring.aop.support.NamedMethodPointcutAdvisor">
+        <property name="advice">
+            <ref bean="jsonSerializeAdvice"/>
+        </property>
+        <property name="mappedNames">
+            <value>updateScan,updateScans,getScan,searchScans,getPendingImports,getImportDirectory</value>
+        </property>
+    </bean>
+   
+    <bean id="securityAdvisor" class="coldspring.aop.support.NamedMethodPointcutAdvisor">
+        <property name="advice">
+            <ref bean="securityAdvice"/>
+        </property>
+        <property name="mappedNames">
+            <value>*</value>
+        </property>
+    </bean>
+
+    <bean id="securityAdvice" class="org.dasa.advice.SecurityAdvisor">
+        <constructor-arg>
+            <ref bean="userSessionController"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="JsonDeSerializeScanImageAdvisor"
+        class="coldspring.aop.support.NamedMethodPointcutAdvisor">
+        <property name="advice">
+            <ref bean="JsonDeSerializeScanImageAdvice"/>
+        </property>
+        <property name="mappedNames">
+            <value>removeImage,updateImage</value>
+        </property>
+    </bean>
+
+    <bean id="JsonDeSerializeScanImageAdvice" class="org.dasa.advice.JsonDeSerializeScanImageAdvisor">
+        <property name="scanImageFactory">
+            <ref bean="scanImageFactory"/>
+        </property>
+    </bean>
+
+    <bean id="jsonDeSerializeUserAdvisor"
+        class="coldspring.aop.support.NamedMethodPointcutAdvisor">
+        <property name="advice">
+            <ref bean="jsonDeSerializeUserAdvice"/>
+        </property>
+        <property name="mappedNames">
+            <value>updateUser,deleteUser</value>
+        </property>
+    </bean>
+
+    <bean id="jsonDeSerializeUserAdvice" class="org.dasa.advice.jsonDeSerializeUserAdvisor">
+        <constructor-arg>
+            <ref bean="userFactory"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="JsonDeSerializeArchiveAdvisor"
+        class="coldspring.aop.support.NamedMethodPointcutAdvisor">
+        <property name="advice">
+            <ref bean="JsonDeSerializeArchiveAdvice"/>
+        </property>
+        <property name="mappedNames">
+            <value>updateArchiveFile,deleteArchiveFile</value>
+        </property>
+    </bean>
+
+    <bean id="JsonDeSerializeArchiveAdvice" class="org.dasa.advice.JsonDeSerializeArchiveAdvisor"/>
+
+</beans>

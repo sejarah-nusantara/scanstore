@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="validationController" lazy-init="false"
+        class="com.silkunion.control.ValidationVTControllerImpl">
+        <property name="businessRuleEngine">
+            <ref bean="validateThis"/>
+        </property>
+        <property name="messagefactory">
+            <ref bean="validationMessageFactory"/>
+        </property>
+    </bean>
+
+    <bean id="fileSystemController" class="com.silkunion.control.FilesystemControllerImpl"/>
+
+    <bean id="directoryController" class="com.silkunion.control.SingleThreadDirectoryController"
+        singleton="true" lazy-init="false">
+        <constructor-arg>
+            <ref bean="fileSystemController"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="acceptedFilesConfig"/>
+        </constructor-arg>
+    </bean>
+
+    <!-- Type image
+        
+        image/gif: GIF image; Defined in RFC 2045 and RFC 2046
+        image/jpeg: JPEG JFIF image; Defined in RFC 2045 and RFC 2046
+        image/pjpeg: JPEG JFIF image; Associated with Internet Explorer; Listed in ms775147(v=vs.85) - Progressive JPEG, initiated before global browser support for progressive JPEGs (Microsoft and Firefox).
+        image/png: Portable Network Graphics; Registered,[10] Defined in RFC 2083
+        image/svg+xml: SVG vector image; Defined in SVG Tiny 1.2 Specification Appendix M
+        image/tiff: Tag Image File Format (only for Baseline TIFF); Defined in RFC 3302
+        image/vnd.microsoft.icon: ICO image; Registered[11]
+        
+        application/zip   
+        application/x-zip
+        application/octet-stream
+        application/x-zip-compressed
+        -->
+    <bean id="acceptedFilesConfig" class="coldspring.beans.factory.config.MapFactoryBean">
+        <property name="sourceMap">
+            <map>
+                <entry key="zipMimeTypes">
+                    <value>application/zip,application/x-zip,application/x-zip-compressed,application/octet-stream</value>
+                </entry>
+                <entry key="acceptedImageFiles">
+                    <value>jpeg,jpg,pjpeg,png,tiff,gif,tif</value>
+                </entry>
+                <entry key="acceptedImageMimetypes">
+                    <value>image/gif,image/jpeg,image/jpg,image/pjpeg,image/png,image/tiff,image/tif</value>
+                </entry>
+                <entry key="fileExtentions">
+                    <map>
+                        <entry key="TIF">
+                            <value>tif,tiff</value>
+                        </entry>
+                        <entry key="JPG">
+                            <value>jpeg,jpg,pjpeg</value>
+                        </entry>
+                        <entry key="ZIP">
+                            <value>zip</value>
+                        </entry>
+                    </map>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="scanStoreController" class="org.dasa.control.ScanStoreController">
+        <constructor-arg>
+            <ref bean="acceptedFilesConfig"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="userSessionController"/>
+        </constructor-arg>
+        <property name="directoryController">
+            <ref bean="directoryController"/>
+        </property>
+        <property name="fileSystemController">
+            <ref bean="fileSystemController"/>
+        </property>
+        <property name="zipUtility">
+            <ref bean="zipUtility"/>
+        </property>
+        <property name="validationController">
+            <ref bean="validationController"/>
+        </property>
+        <property name="pageScanFactory">
+            <ref bean="pageScanFactory"/>
+        </property>
+        <property name="repositoryWebservice">
+            <ref bean="repositoryWebservice"/>
+        </property>
+        <property name="userSessionController">
+            <ref bean="userSessionController"/>
+        </property>
+    </bean>
+
+    <bean id="userSessionController" class="org.dasa.control.UserSessionController">
+        <constructor-arg>
+            <ref bean="userDAO"/>
+        </constructor-arg>
+        <property name="fileSystemController">
+            <ref bean="fileSystemController"/>
+        </property>
+    </bean>
+
+</beans>

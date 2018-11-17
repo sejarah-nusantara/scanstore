@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="validateThisConfig" class="coldspring.beans.factory.config.MapFactoryBean">
+        <property name="sourceMap">
+            <map>
+                <entry key="definitionPath">
+                    <value>/org/dasa/model/rules/</value>
+                </entry>
+                <entry key="translatorPath">
+                    <value>ValidateThis.core.RBTranslator</value>
+                </entry>
+                <entry key="localeLoaderPath">
+                    <value>ValidateThis.core.RBLocaleLoader</value>
+                </entry>
+                <entry key="defaultLocale">
+                    <value>en_GB</value>
+
+                </entry>
+                <entry key="defaultFailureMessagePrefix">
+                    <value>The field </value>
+
+                </entry>
+
+                <entry key="localeMap">
+                    <map>
+                        <entry key="en_GB">
+                            <value>/org/dasa/locales/en_GB.properties</value>
+                        </entry>
+                    </map>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="validateThis" class="ValidateThis.ValidateThis">
+        <constructor-arg>
+            <ref bean="validateThisConfig"/>
+        </constructor-arg>
+    </bean>
+    <bean id="pageScanFactory" class="org.dasa.model.PageScanFactoryImpl">
+        <property name="beanInjector">
+            <ref bean="beanInjector"/>
+        </property>
+        <property name="scanImageFactory">
+            <ref bean="scanImageFactory"/>
+        </property>
+        
+    </bean>
+    
+    <bean id="scanImageFactory" class="org.dasa.model.ScanImageFactory">
+        <property name="beanInjector">
+            <ref bean="beanInjector"/>
+        </property>
+    </bean>
+    
+    <bean id="scanImportScenarioFactory" class="com.silkunion.util.TransientFactoryImpl">
+        <constructor-arg>
+            <map>
+                <entry key="SingleFile">
+                    <value>org.dasa.model.SingleFileImportScenario</value>
+                </entry>
+                <entry key="MultiFileTIFFJPG">
+                    <value>org.dasa.model.MultiFileTIFFJPGImportScenario</value>
+                </entry>
+                <entry key="MultiFileTIFFJPGUnEqual">
+                    <value>org.dasa.model.MultiFileTIFFJPGImportScenarioNotEqual</value>
+                </entry>
+            </map>
+        </constructor-arg>
+        <property name="beanInjector">
+            <ref bean="beanInjector"/>
+        </property>
+    </bean>
+
+    <bean id="importDirectoryFactory" class="com.silkunion.util.TransientFactoryImpl">
+        <constructor-arg>
+            <map>
+                <entry key="importDirectory">
+                    <value>org.dasa.model.ImportDirectory</value>
+                </entry>
+                <entry key="baseImportDirectory">
+                    <value>org.dasa.model.BaseImportDirectory</value>
+                </entry>
+                <entry key="importLogReaderWriter">
+                    <value>org.dasa.model.ImportLogReaderWriter</value>
+                </entry>
+            </map>
+        </constructor-arg>
+        <constructor-arg>
+            <value>setup</value>
+        </constructor-arg>
+        <property name="beanInjector">
+            <ref bean="beanInjector"/>
+        </property>
+    </bean>
+
+    <bean id="userFactory" class="org.dasa.model.user.UserFactory">
+        <property name="userDao">
+            <ref bean="userDao"/>
+        </property>
+        <property name="userRoleDao">
+            <ref bean="userRoleDao"/>
+        </property>
+    </bean>
+    
+    <import resource="/org/dasa//model/validation/validation.cs.xml"/>
+</beans>

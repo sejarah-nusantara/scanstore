@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+
+    <bean id="userDao" class="com.silkunion.persistence.HibernateDaoImpl">
+        <constructor-arg>
+            <value>User</value>
+        </constructor-arg>
+    </bean>
+    <bean id="userRoleDao" class="com.silkunion.persistence.HibernateDaoImpl">
+        <constructor-arg>
+            <value>UserRole</value>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="archivesGateway" class="org.dasa.persistence.ArchivesGateway" lazy-init="false">
+        <constructor-arg>
+            <ref bean="repositoryWebservice"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="userSessionController"/>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="importDirectoryGateway" class="org.dasa.persistence.ImportDirectoryGateway" >
+        <constructor-arg>
+            <ref bean="importDirectoryFactory"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="fileSystemController"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="directoryController"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="userSessionController"/>
+        </constructor-arg>
+    </bean>
+</beans>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="securityConfig" class="coldspring.beans.factory.config.MapFactoryBean">
+        <property name="sourceMap">
+            <map>
+                <entry key="roleNames">
+                    <map>
+                        <entry key="SYS_ADMIN">
+                            <list>
+                                <value>*</value>
+                            </list>
+                        </entry>
+                        <entry key="SYS_USER">
+                            <list>
+                                <value>scan|Intitutions|Archives|Files|Statuses|Languages|Image|Import|Zip|ArchiveFile</value>
+                            </list>
+                        </entry>
+                    </map>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+
+</beans>

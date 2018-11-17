@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="userDao" class="org.dasa.mock.persistence.UserDao">
+		<constructor-arg>
+            <ref bean="userRoleDao"/>
+        </constructor-arg>
+	</bean>
+	<bean id="userRoleDao" class="org.dasa.mock.persistence.UserRoleDao" />
+    
+    <bean id="archivesGateway" class="org.dasa.persistence.ArchivesGateway" lazy-init="false">
+        <constructor-arg>
+            <ref bean="repositoryWebservice"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="userSessionController"/>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="importDirectoryGateway" class="org.dasa.persistence.ImportDirectoryGateway" >
+        <constructor-arg>
+            <ref bean="importDirectoryFactory"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="fileSystemController"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="directoryController"/>
+        </constructor-arg>
+        <constructor-arg>
+            <ref bean="userSessionController"/>
+        </constructor-arg>
+    </bean>
+</beans>

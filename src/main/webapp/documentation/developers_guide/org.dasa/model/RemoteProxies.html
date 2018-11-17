@@ -1,0 +1,197 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<html>
+                <head>
+        <title>RemoteProxies</title>
+        <link rel="stylesheet" href="../../resources/style.css" type="text/css" />
+        <script type="text/javascript" src="../../resources/mtmtrack.js"></script>
+    </head>
+    <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+        <div id="">
+        <a id=""/>
+        <hr/>
+<h2> Component RemoteProxies</h2>
+<br/>
+
+<!-- Signature -->
+<dl><dt>
+        public component <b>RemoteProxies</b></dt></dl>
+
+        <!-- parent rendering -->
+            <div>
+            <b>Namespace: </b>
+            model
+        </div>
+    
+    
+    <dd><p style='mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-family:Arial">These are coldspring generated proxies.Please note that they are generated in the webroot under the remote folder.</span></p>
+<p style='mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-family:Arial">See below configuration example from /remote/remote.cs.xml</span></p>
+<p style='mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-family:Arial">As you can see the AOP advisors are listed in the property element</span> <span style="font-size:11.0pt; font-family:Monaco;mso-bidi-font-family:Monaco;color:#993300">interceptorNames</span> <span style="font-family:Arial">these advisors are references to beans defined in the</span></p>
+<p style='mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-family:Arial">org.dasa.advice package have a look at the code via the api <a href="/documentation" target="blank">documentation</a> for more information.</span></p>
+<p style='mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-family:Arial">Also see the <a href="http://www.coldspringframework.org/downloads/ColdSpring_Reference.pdf">coldspring</a> documentation page 40 on remote facades for more information on how to implement.</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="text-decoration:underline;"><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:#000096">&lt;bean</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#F5844C">id</span><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:#FF8040">=</span><span style="font-size:11.0pt; font-family:Monaco;mso-bidi-font-family:Monaco;color:#993300">&quot;scanImportService_Remote&quot;</span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#F5844C">class</span><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:#FF8040">=</span><span style="font-size:11.0pt; font-family:Monaco;mso-bidi-font-family:Monaco;color:#993300">&quot;coldspring.aop.framework.RemoteFactoryBean&quot;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:#F5844C"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> lazy-init</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#FF8040">=</span><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:#993300">&quot;false&quot;</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;property</span> <span style="font-size:11.0pt;font-family: Monaco;mso-bidi-font-family:Monaco;color:#F5844C">name</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#FF8040">=</span><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:#993300">&quot;target&quot;</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;ref</span> <span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:#F5844C">bean</span><span style="font-size: 11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco;color:#FF8040">=</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#993300">&quot;scanImportService&quot;</span><span style="font-size:11.0pt; font-family:Monaco;mso-bidi-font-family:Monaco;color:#000096">/&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;/property&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;property</span> <span style="font-size:11.0pt;font-family: Monaco;mso-bidi-font-family:Monaco;color:#F5844C">name</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#FF8040">=</span><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:#993300">&quot;serviceName&quot;</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;value&gt;</span><span style="font-size:11.0pt;font-family: Monaco;mso-bidi-font-family:Monaco;color:black">RemoteScanImportService</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;/value&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;/property&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;property</span> <span style="font-size:11.0pt;font-family: Monaco;mso-bidi-font-family:Monaco;color:#F5844C">name</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#FF8040">=</span><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:#993300">&quot;relativePath&quot;</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;value&gt;</span><span style="font-size:11.0pt;font-family: Monaco;mso-bidi-font-family:Monaco;color:black">remote</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;/value&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;/property&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;property</span> <span style="font-size:11.0pt;font-family: Monaco;mso-bidi-font-family:Monaco;color:#F5844C">name</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#FF8040">=</span><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:#993300">&quot;remoteMethodNames&quot;</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;value&gt;</span><span style="font-size:11.0pt;font-family: Monaco;mso-bidi-font-family:Monaco;color:black">getImportScenarios,sendScanImportToRepository,getPendingImports,deleteImportDirectory</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;/value&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;/property&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;property</span> <span style="font-size:11.0pt;font-family: Monaco;mso-bidi-font-family:Monaco;color:#F5844C">name</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#FF8040">=</span><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:#993300">&quot;useJsonReturnType&quot;</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;value&gt;</span><span style="font-size:11.0pt;font-family: Monaco;mso-bidi-font-family:Monaco;color:black">true</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;/value&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;/property&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;property</span> <span style="font-size:11.0pt;font-family: Monaco;mso-bidi-font-family:Monaco;color:#F5844C">name</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#FF8040">=</span><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:#993300">&quot;interceptorNames&quot;</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;list&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family: Monaco;color:#000096">&lt;value&gt;</span><span style="font-size:11.0pt; font-family:Monaco;mso-bidi-font-family:Monaco;color:black">securityAdvisor</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;/value&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family: Monaco;color:#000096">&lt;value&gt;</span><span style="font-size:11.0pt; font-family:Monaco;mso-bidi-font-family:Monaco;color:black">errorAdvisor</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;/value&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family: Monaco;color:#000096">&lt;value&gt;</span><span style="font-size:11.0pt; font-family:Monaco;mso-bidi-font-family:Monaco;color:black">jsonDeserializeImportDirectoryAdvisor</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;/value&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family: Monaco;color:#000096">&lt;value&gt;</span><span style="font-size:11.0pt; font-family:Monaco;mso-bidi-font-family:Monaco;color:black">jsonDeserializeImportDirectoryWithFactoryAdvisor</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;/value&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family: Monaco;color:#000096">&lt;value&gt;</span><span style="font-size:11.0pt; font-family:Monaco;mso-bidi-font-family:Monaco;color:black">jsonSerializeAdvisor</span><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;/value&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;/list&gt;</span></p>
+<p style='mso-pagination:none;mso-layout-grid-align:none; text-autospace:none;mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco; mso-bidi-font-family:Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span> <span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;/property&gt;</span></p>
+<p style='mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family: Monaco;color:black"><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;</span></span> <span style="text-decoration:underline;"><span style="font-size:11.0pt;font-family:Monaco;mso-bidi-font-family:Monaco; color:#000096">&lt;/bean&gt;</span></span></p>
+<p style='mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '></p>
+<p style='mso-style-parent:""; margin:0cm; margin-bottom:1.0E-4pt; mso-pagination:widow-orphan; font-size:12pt; font-family:"Times New Roman"; mso-ascii-font-family:Cambria; mso-ascii-theme-font:minor-latin; mso-fareast-font-family:Cambria; mso-fareast-theme-font:minor-latin; mso-hansi-font-family:Cambria; mso-hansi-theme-font:minor-latin; mso-bidi-font-family:"Times New Roman"; mso-bidi-theme-font:minor-bidi; '></p>
+<p></p></dd>
+    
+                                                                                
+<!-- Assosiations -->
+    <!--  Association Association 6 true Im2861cd87m13db55fd9b6mm762d -->
+<dt>
+<a id="Association_element_summary"/>
+<table border="1" cellpadding="3" cellspacing="0" width="100%">
+<tr bgcolor="#FFCC33" class="TableHeadingColor">
+<td valign="top" colspan="2">
+<table border="0">
+<tr>
+<td>
+<img src="../../resources/Association.gif"/>
+</td>
+<td valign="middle">
+<font size="+1"><b>Association Summary</b></font>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td valign="top" width="30%">
+<div>
+    <img src="../../resources/Association.gif"/>
+<b>
+<a href="../../org.dasa/model/pointCuts.html">pointCuts</a>
+</b>
+</div>
+</td>
+<td valign="top"></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td valign="top" width="30%">
+<div>
+    <img src="../../resources/Association.gif"/>
+<b>
+<a href="../../org.dasa/model/anonymous_11.html">RemoteProxies To WebClient</a>
+</b>
+</div>
+</td>
+<td valign="top"></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td valign="top" width="30%">
+<div>
+    <img src="../../resources/Association.gif"/>
+<b>
+<a href="../../org.dasa/model/delegates_requests.html">delegates requests</a>
+</b>
+</div>
+</td>
+<td valign="top"></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td valign="top" width="30%">
+<div>
+    <img src="../../resources/Association.gif"/>
+<b>
+<a href="../../org.dasa/model/anonymous_12.html">Services/Controllers To RemoteProxies</a>
+</b>
+</div>
+</td>
+<td valign="top"></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td valign="top" width="30%">
+<div>
+    <img src="../../resources/Association.gif"/>
+<b>
+<a href="../../org.dasa/model/anonymous_13.html">Services/Controllers To RemoteProxies</a>
+</b>
+</div>
+</td>
+<td valign="top"></td>
+</tr>
+<tr bgcolor="white" class="TableRowColor">
+<td valign="top" width="30%">
+<div>
+    <img src="../../resources/Association.gif"/>
+<b>
+<a href="../../org.dasa/model/anonymous_10.html">RemoteProxies To WebClient</a>
+</b>
+</div>
+</td>
+<td valign="top"></td>
+</tr>
+</table>
+</dt>
+<br />
+<!-- ProvidedInterfaces -->
+    <!--  ProvidedInterface Provided Interfaces 0 true Im2861cd87m13db55fd9b6mm762d -->
+
+<!-- RequiredInterfaces -->
+    <!--  RequiredInterface Required Interfaces 0 true Im2861cd87m13db55fd9b6mm762d -->
+
+<!-- Ports -->
+    <!--  Port Ports 0 true Im2861cd87m13db55fd9b6mm762d -->
+
+<!-- Realizations -->
+    <!--  Realization Realizations 0 true Im2861cd87m13db55fd9b6mm762d -->
+
+<!-- Delegation Connectors -->
+    <!--  DelegationConnector Delegation Connectors 0 true Im2861cd87m13db55fd9b6mm762d -->
+
+<!-- Assembly Connectors -->
+    <!--  AssemblyConnector Assembly Connectors 0 true Im2861cd87m13db55fd9b6mm762d -->
+
+<!-- Owned Members -->
+    <!--  Class Owned Members 0 true Im2861cd87m13db55fd9b6mm762d -->
+
+<!-- Artifacts -->
+    <!--  Artifact Artifacts 0 true Im2861cd87m13db55fd9b6mm762d -->
+
+
+<br/>
+<!-- =========== TAGGED VALUES =========== -->
+<br/>
+<!-- =========== CONSTRAINTS =========== -->
+    <br/>
+    </div>
+      <HR>
+    <center>
+                    <a href="../../org.dasa/model/Services_Controllers/Aop_security_error_json.html">previous</a>
+        &nbsp
+                <a href="../../short_TOC.html">TOC</a>
+        &nbsp
+            <a href="../../sequence_diagrams.html">next</a>
+        </center>
+      <hr/>
+    
+    <div style="font-size:0.8em;">
+  UML is a trademark or registered trademark of Object Management Group, Inc. in the U.S. and other countries.
+</div>
+    </body>
+</html>

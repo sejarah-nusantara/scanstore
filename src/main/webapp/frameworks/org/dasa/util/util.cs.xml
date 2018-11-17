@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <bean id="beanInjector" class="org.dasa.util.beanutil.BeanInjector" />
+
+    <bean id="zipUtility" class="com.silkunion.util.ZipUtility"/>
+    <bean id="arrayUtility" class="com.silkunion.util.ArrayUtility"/>
+    <bean id="dateConverterFactory" class="com.silkunion.util.JavaDateConverterFactory"/>
+
+    <bean id="dateConverter" factory-bean="dateConverterFactory" factory-method="getObject">
+        <constructor-arg>
+            <value>dd/MM/yyyy</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value>en</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value>US</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value>false</value>
+        </constructor-arg>
+    </bean>
+    <bean id="dateTimeConverterISO" factory-bean="dateConverterFactory" factory-method="getObject">
+        <constructor-arg>
+            <value>yyyy-MM-dd'T'HH:mm:ssZ</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value>en</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value>US</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value>false</value>
+        </constructor-arg>
+    </bean>
+    <bean id="dateConverterISO" factory-bean="dateConverterFactory" factory-method="getObject">
+        <constructor-arg>
+            <value>yyyy-MM-dd</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value>en</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value>GB</value>
+        </constructor-arg>
+        <constructor-arg>
+            <value>false</value>
+        </constructor-arg>
+    </bean>
+    <bean id="dateUtility" class="com.silkunion.util.JavaDateUtility">
+        <constructor-arg>
+            <ref bean="dateConverter"/>
+        </constructor-arg>
+    </bean>
+    <bean id="dateUtilityIsoDateTime" class="com.silkunion.util.JavaDateUtility">
+        <constructor-arg>
+            <ref bean="dateTimeConverterISO"/>
+        </constructor-arg>
+    </bean>
+    <bean id="dateUtilityIsoDate" class="com.silkunion.util.JavaDateUtility">
+        <constructor-arg>
+            <ref bean="dateConverterISO"/>
+        </constructor-arg>
+    </bean>
+</beans>

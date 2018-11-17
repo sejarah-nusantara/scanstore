@@ -1,0 +1,259 @@
+html body {
+	background-image:url(../images/noise.png);
+	background-color:#E0E0E8 !important;
+}
+#loader {
+	position:absolute;
+	display:none;
+	background-image: url('../images/loading-light.gif');
+	background-position:left center;
+	background-repeat:no-repeat;
+	width:300px;
+	height:20px;
+	left:50%;
+	top:50%;
+	padding-left:25px;
+	margin-left:-150px;
+	margin-top:-10px;
+	color: #FFFFFF;
+	font-size:16px;
+	line-height:20px;
+}
+.save {
+	background-image: url('../images/disk.png');
+}
+.up {
+	background-image: url('../images/arrow_up.png');
+}
+.down {
+	background-image: url('../images/arrow_down.png');
+}
+.delete {
+	background-image: url('../images/delete.png');
+}
+.cancel {
+	background-image: url('../images/arrow_rotate_anticlockwise.png');
+}
+.application-window {
+	background-image: url('../images/application.png');
+}
+.image-viewer-window {
+	background-image: url('../images/picture_editor_window.png');
+}
+.image-viewer-panel {
+	background-image: url('../images/picture_editor_panel.png');
+}
+.image-viewer {
+	background-image: url('../images/picture_editor.png');
+}
+.file-publish {
+	background-image: url('../images/folder_go.png');
+}
+.file-unpublish {
+	background-image: url('../images/folder_back.png');
+}
+.scans-save {
+	background-image: url('../images/photos_save.png');
+}
+.scans-delete {
+	background-image: url('../images/photos_delete.png');
+}
+.scan-delete {
+	background-image: url('../images/photo_delete.png');
+}
+.scan-edit {
+	background-image: url('../images/photo_edit.png');
+}
+.image-add {
+	background-image: url('../images/picture_add.png');
+}
+.image-delete {
+	background-image: url('../images/picture_delete.png');
+}
+.image-download {
+	background-image: url('../images/picture_down.png');
+}
+.image-edit {
+	background-image: url('../images/picture_edit.png');
+}
+.image-publish {
+	background-image: url('../images/picture_go.png');
+}
+.import-delete {
+	background-image: url('../images/package_delete.png');
+}
+.import-import {
+	background-image: url('../images/package_go.png');
+}
+.import-log-viewer {
+	background-image: url('../images/page_white.png');
+}
+.import-log {
+	background-image: url('../images/page_white_magnify.png');
+}
+.user-add {
+	background-image: url('../images/user_add.png');
+}
+.user-edit {
+	background-image: url('../images/user_edit.png');
+}
+.user-delete {
+	background-image: url('../images/user_delete.png');
+}
+.user-logoff {
+	background-image: url('../images/door_out.png');
+}
+.user-login {
+	background-image: url('../images/door_in.png');
+}
+.users-save {
+	background-image: url('../images/group_save.png');
+}
+.users-delete {
+	background-image: url('../images/group_delete.png');
+}
+.search {
+	background-image: url('../images/magnifier.png');
+}
+.clear {
+	background-image: url('../images/bin_empty.png');
+}
+.activities {
+	background-image: url('../images/world.png');
+}
+.image-panel {
+	background-image: url('../images/pictures.png');
+}
+.scan-panel {
+	background-image: url('../images/photo.png');
+}
+.user-tab {
+	background-image: url('../images/user.png');
+}
+.scan-tab {
+	background-image: url('../images/photo.png');
+}
+.scan-management {
+	background-image: url('../images/photos.png');
+}
+.import-management {
+	background-image: url('../images/package.png');
+}
+.file-management {
+	background-image: url('../images/folder.png');
+}
+.user-management {
+	background-image: url('../images/group.png');
+}
+.help {
+	background-image: url('../images/help.png');
+}
+.archive-import-upload {
+	background-image: url('../images/compress_go.png');
+}
+.archive-upload {
+	background-image: url('../images/compress.png');
+}
+.actionitem {
+	width:16px;
+	height:16px;
+	margin:3px 4px -3px 4px;
+	cursor:pointer;
+}
+.log div {
+	padding:10px;
+	font-family: monospace;
+	overflow-y:auto;
+}
+div.state  {
+	background-color:#F0F0F0;
+	padding:10px;
+	border:1px solid #FFFFFF;
+}
+div.state h1,
+div.state h2 {
+	margin-bottom:8px;
+}
+div.state h2 {
+	color:#888888;
+	margin-top:8px;
+}
+div.state p {
+	margin:2px;
+}
+P#autoRetryHolder {
+	color:#AAAAAA;
+	margin-top:15px;	
+}
+div#user-session-info,
+div.main-header>div.x-box-inner { 
+	color: #606078;
+}
+div#main-header-info,
+div#main-title {
+	line-height:16px;
+	height:16px;
+}
+div#main-header-info { 
+	color: #505068;
+}
+div#main-title>div {
+	margin-left:12px;
+	display:inline-block;
+}
+div#main-title>div.version {
+	font-style:italic;
+	font-weight:normal;	
+	color: #E6E6EF;
+}
+div#main-title {
+	font-weight:bold;
+}
+div.main-header>div.x-box-inner { 
+	background: linear-gradient(to bottom, rgba(120,120,120,.2), rgba(240,240,240,.3));
+	border-bottom:1px solid #C8C8D0;
+}
+div.main-header {
+	background-image:url(../images/noise.png);
+	background-position:-100px -100px;
+	border-bottom:1px solid #E6E6EF;
+}
+div.main-toolbar>div.x-tab-bar-body {
+	border-top:1px solid #EEEEFF;
+}
+div.main-toolbar>div.x-tab-bar-body,
+div.main-toolbar>div.x-tab-bar-strip {
+	border-left-width:0;
+	border-right-width:0;
+}
+div.main-outline {
+	background: linear-gradient(to bottom, rgba(234,234,234,1), rgba(234,234,234,0));
+	background-image:url(../images/noise.png);
+	border:none;
+	padding:0;
+	margin:0;
+}
+div.main-outline>div.x-tabpanel-child {
+	background: linear-gradient(to bottom, rgba(234,234,234,1), rgba(234,234,234,0));
+	padding:5px;
+	margin:0;
+}
+div.main-progress {
+	background-image:url(../images/loading-dark.gif);
+	background-position:right center;
+	background-repeat:no-repeat;
+	padding-right:22px;
+}
+
+/* EXT */
+.x-grid-with-row-lines .x-grid-cell-inner {
+	line-height:20px;
+}
+.x-grid-with-row-lines .x-grid-cell-inner img.state {
+	margin:-3px 0 -4px 10px;
+}
+.x-grid-with-row-lines .x-grid-cell-inner img.thumbnail {
+	margin:-2px 0 -9px 0;
+	border:1px solid #000000;
+	height:25px;
+}

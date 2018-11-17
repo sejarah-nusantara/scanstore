@@ -1,0 +1,112 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class entity-name="PopstapActionEvidence" lazy="true"
+        name="cfc:nl.deviant.studiemeter.popstap.model.actionplanner.PopstapActionEvidence" 
+        table="popstap_action_evidence">
+        <id name="postapActionEvidenceId" type="int">
+            <column length="10" name="postap_action_evidence_id" />
+            <generator class="native"/>
+        </id>
+       
+        <property name="popstapActionEvidenceDocument" type="string">
+            <column length="255" name="popstap_action_evidence_document" not-null="true"/>
+        </property>
+        <property name="contentType" type="string">
+            <column length="50" name="content_type" />
+        </property>
+        
+        <many-to-one  
+            class="cfc:nl.deviant.studiemeter.popstap.model.actionplanner.PopstapActionPlanner"
+            column="popstap_action_planner_id" name="popstapActionPlanner" unique="true" />
+    </class>
+    <class entity-name="PopstapActionPlanner" lazy="true"
+        name="cfc:nl.deviant.studiemeter.popstap.model.actionplanner.PopstapActionPlanner"
+        table="popstap_action_planner">
+        <id name="popstapActionPlannerId" type="int">
+            <column length="10" name="popstap_action_planner_id"/>
+            <generator class="native"/>
+        </id>
+        <property name="popstapId" type="int">
+            <column length="10" name="popstap_id" not-null="true"/>
+        </property>
+        <property name="learningGoal" type="string">
+            <column length="255" name="learning_goal"/>
+        </property>
+        <property name="endDate" type="timestamp">
+            <column length="23" name="end_date"/>
+        </property>
+        <property name="approvalDate" type="timestamp">
+            <column length="23" name="approval_date"/>
+        </property>
+        <property name="approvedBy" type="int">
+            <column length="10" name="approved_by" />
+        </property>
+        <one-to-one 
+            class="cfc:nl.deviant.studiemeter.popstap.model.actionplanner.PopstapBaseActionForm"
+            name="popstapActionForm" property-ref="popstapActionPlanner"  constrained="true"/>
+        <bag name="popstapActionEvidence"  inverse="true" cascade="save-update">
+            <key column="popstap_action_planner_id"/>
+            <one-to-many 
+                class="cfc:nl.deviant.studiemeter.popstap.model.actionplanner.PopstapActionEvidence"
+            />
+        </bag>
+    </class>
+    <class entity-name="PopstapBaseActionForm" lazy="true"
+        name="cfc:nl.deviant.studiemeter.popstap.model.actionplanner.PopstapBaseActionForm"
+        table="popstap_action_form">
+        <id name="popstapActionFormId" type="int">
+            <column length="10" name="popstap_action_form_id"/>
+            <generator class="native"/>
+        </id>
+        <discriminator column="popstap_action_form_type"  
+        />
+        <property name="competence" type="string">
+            <column length="1073741823" name="competence"/>
+        </property>
+        <property name="learningGoal" type="string">
+            <column length="1073741823" name="learning_goal"/>
+        </property>
+        <property name="situation" type="string">
+            <column length="1073741823" name="situation"/>
+        </property>
+        <property name="task" type="string">
+            <column length="1073741823" name="task"/>
+        </property>
+        <property name="action" type="string">
+            <column length="1073741823" name="`action`"/>
+        </property>
+        <property name="result" type="string">
+            <column length="1073741823" name="`result`"/>
+        </property>
+        <property name="reflectionAction" type="string">
+            <column length="50" name="reflection_action"/>
+        </property>
+        <property name="reflectionSense" type="string">
+            <column length="50" name="reflection_sense"/>
+        </property>
+        <property name="reflectionLearned" type="string">
+            <column length="50" name="reflection_learned"/>
+        </property>
+        <property name="actionLearned" type="string">
+            <column length="1073741823" name="action_learned"/>
+        </property>
+        <property name="actionMoreLearned" type="string">
+            <column length="1073741823" name="action_more_learned"/>
+        </property>
+       
+        <many-to-one
+            class="cfc:nl.deviant.studiemeter.popstap.model.actionplanner.PopstapActionPlanner"
+            column="popstap_action_planner_id" name="popstapActionPlanner" unique="true"/>
+        
+        <subclass discriminator-value="standard" entity-name="PopstapStandardActionForm" lazy="true"
+            name="cfc:nl.deviant.studiemeter.popstap.model.actionplanner.PopstapStandardActionForm"/>
+        <subclass discriminator-value="extra" entity-name="PostapExtraActionForm" lazy="true"
+            name="cfc:nl.deviant.studiemeter.popstap.model.actionplanner.PostapExtraActionForm">
+            <property name="studiedSource" type="string">
+                <column length="1073741823" name="studied_source"/>
+            </property>
+        </subclass>
+    </class>
+  
+</hibernate-mapping>

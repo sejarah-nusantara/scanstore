@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<validateThis xsi:noNamespaceSchemaLocation="http://www.validatethis.org/validateThis.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<objectProperties>
+		<property name="userName" desc="User name">
+			<rule type="required" contexts="*" />
+		</property>
+		
+		<property name="password" desc="Password">
+			<rule type="required" contexts="*" />
+			<rule type="rangelength" contexts="*">
+				<param name="minlength" value="1" />
+				<param name="maxlength" value="100" />
+			</rule>
+			<rule type="custom" failureMessage="duplicatePassword" contexts="register"> 
+				<!-- Specifying no context is the same as specifying a context of "*" -->
+				<param name="methodname" value="checkDuplicateUserpassword" />
+			</rule>
+		</property>
+		<property name="email" desc="Email">
+			<rule type="required" contexts="*" />
+			<rule type="email" contexts="*"  />
+		</property>
+		<property name="institutionID" desc="Institution">
+			<rule type="required" contexts="*" />
+			
+		</property>
+		<!--<property name="verifyPassword">
+			<rule type="required" contexts="*" />
+			<rule type="equalTo" contexts="*">
+				<param name="ComparePropertyName" value="password" />
+			</rule>
+		</property>-->
+		
+		<property name="firstName" desc="First Name">
+			<rule type="required" contexts="*" />
+		</property>
+		<property name="lastName" desc="Last Name">
+			<rule type="required" contexts="*" />
+		
+		</property>
+		
+	</objectProperties>
+</validateThis>
